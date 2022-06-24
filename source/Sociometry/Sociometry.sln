@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sociometry", "Sociometry.csproj", "{6146682D-D70C-4926-92DF-D1BEB307AFE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sociometry", "Sociometry.csproj", "{E56AF53A-11CD-4B61-9205-40E23715C92E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6146682D-D70C-4926-92DF-D1BEB307AFE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6146682D-D70C-4926-92DF-D1BEB307AFE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6146682D-D70C-4926-92DF-D1BEB307AFE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6146682D-D70C-4926-92DF-D1BEB307AFE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E56AF53A-11CD-4B61-9205-40E23715C92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E56AF53A-11CD-4B61-9205-40E23715C92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E56AF53A-11CD-4B61-9205-40E23715C92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E56AF53A-11CD-4B61-9205-40E23715C92E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E16F210C-B62E-440A-867E-2F062F3FA25D}
+		SolutionGuid = {237B613E-0B94-4AC8-B2B0-A6355C676369}
 	EndGlobalSection
 EndGlobal

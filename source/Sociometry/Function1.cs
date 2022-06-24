@@ -10,7 +10,7 @@ namespace Sociometry
         [FunctionName("negotiate")]
         public static SignalRConnectionInfo Negotiate(
             [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req,
-            [SignalRConnectionInfo(HubName = "QuestionnaireEventes")] SignalRConnectionInfo connectionInfo)
+            [SignalRConnectionInfo(HubName = "questionnaireEvents")] SignalRConnectionInfo connectionInfo)
         {
             return connectionInfo;
         }
