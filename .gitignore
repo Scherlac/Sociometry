@@ -1,8 +1,4 @@
-.devcontainer/logs/connect.ps1
-source/tmp/default.env
-source/tmp/etc.tgz
-source/tmp/nginx.tgz
-source/tmp/packages.txt
-source/tmp/source.zip
-source/tmp/startup.tgz
-source/logs.txt
+logs/
+tmp/
+.vs/
+obj/

@@ -1,0 +1,16 @@
+FROM scherlac/devbase:latest
+
+EXPOSE 2222 80
+
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends \
+        openssh-server \
+    && rm -rf /var/lib/apt/lists/* \
+    && ssh-keygen -A \
+    && mkdir -p /var/run/sshd \
+    && echo "root:Docker!" | chpasswd
+
+COPY /scripts/data/sshd_config /etc/ssh/sshd_config
+COPY --chmod=0755 /scripts/data/startup.sh /app/
+
+ENTRYPOINT ["bash", "/app/startup.sh"]
