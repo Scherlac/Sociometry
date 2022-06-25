@@ -1,14 +1,9 @@
-﻿{
+{
   "profiles": {
     "Sociometry": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
-      //"commandLineArgs": "--port 7170",
-      "launchBrowser": true,
-      "applicationUrl": "https://localhost:7067;http://localhost:5270",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      "commandLineArgs": "--port 7248",
+      "launchBrowser": false
     }
   }
 }

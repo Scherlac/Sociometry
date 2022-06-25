@@ -16,6 +16,13 @@
       "type": "signalr.function",
       "connectionId": "AzureSignalRConnectionString",
       "dynamicId": null
+    },
+    "signalr2": {
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.SignalRService/SignalR/sclx-signals",
+      "type": "signalr.function",
+      "connectionId": "AzureSignalRConnectionString",
+      "dynamicId": null
     }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "generatedBy": "Microsoft.NET.Sdk.Functions.Generator-4.1.1",
+  "configurationSource": "attributes",
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": [
+        "post"
+      ],
+      "authLevel": "function",
+      "name": "req"
+    },
+    {
+      "type": "signalRConnectionInfo",
+      "hubName": "questionnaireEvents",
+      "name": "connectionInfo"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/Sociometry.dll",
+  "entryPoint": "Sociometry.Function1.Negotiate"
+}

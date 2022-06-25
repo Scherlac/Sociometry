@@ -1,0 +1,6 @@
+{
+  "extensions":[
+    { "name": "SignalR", "typeName":"Microsoft.Azure.WebJobs.Extensions.SignalRService.SignalRWebJobsStartup, Microsoft.Azure.WebJobs.Extensions.SignalRService, Version=1.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60"},
+    { "name": "Startup", "typeName":"Sociometry.Startup, Sociometry, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"}
+  ]
+}
