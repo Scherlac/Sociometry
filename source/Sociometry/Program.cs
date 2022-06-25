@@ -1,63 +1,85 @@
 using Azure.Identity;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Azure.SignalR;
 
-var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
 
-//// Managed Identity
-//// SRC: https://docs.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=portal%2Chttp
-//var credential = new DefaultAzureCredential();
-////var credential = new ManagedIdentityCredential(clientId: "3810c47f-8a58-4fba-879e-fffb8ce6e0ed");
+[assembly: FunctionsStartup(typeof(Sociometry.Startup))]
 
-//// Managed Idenity and SignalR
-//// SRC: https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-howto-authorize-managed-identity
+namespace Sociometry
+{
+    public class Startup : FunctionsStartup
+    {
+        public override void Configure(IFunctionsHostBuilder builder)
+        {
+            //builder.Services.AddHttpClient();
 
-//// SignalR
-//// SRC: https://docs.microsoft.com/en-us/aspnet/core/signalr/hubs?view=aspnetcore-6.0
-//// SRC: https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-dotnet-core#add-azure-signalr-to-the-web-app
-//// CMD: dotnet add package Microsoft.Azure.SignalR
-//var srb = builder.Services.AddSignalR();
+            //builder.Services.AddSingleton<IMyService>((s) => {
+            //    return new MyService();
+            //});
 
-//// SRC: https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-howto-authorize-managed-identity#using-system-assigned-identity
-//srb.AddAzureSignalR(option =>
+            //builder.Services.AddSingleton<ILoggerProvider, MyLoggerProvider>();
+        }
+    }
+}
+
+//var builder = WebApplication.CreateBuilder(args);
+
+//// Add services to the container.
+//builder.Services.AddRazorPages();
+
+////// Managed Identity
+////// SRC: https://docs.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=portal%2Chttp
+////var credential = new DefaultAzureCredential();
+//////var credential = new ManagedIdentityCredential(clientId: "3810c47f-8a58-4fba-879e-fffb8ce6e0ed");
+
+////// Managed Idenity and SignalR
+////// SRC: https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-howto-authorize-managed-identity
+
+////// SignalR
+////// SRC: https://docs.microsoft.com/en-us/aspnet/core/signalr/hubs?view=aspnetcore-6.0
+////// SRC: https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-dotnet-core#add-azure-signalr-to-the-web-app
+////// CMD: dotnet add package Microsoft.Azure.SignalR
+////var srb = builder.Services.AddSignalR();
+
+////// SRC: https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-howto-authorize-managed-identity#using-system-assigned-identity
+////srb.AddAzureSignalR(option =>
+////{
+////    var o = builder.Configuration.GetSection("SignalR").Get<SignalROptions>();
+////    option.Endpoints = new ServiceEndpoint[]
+////    {
+////        new ServiceEndpoint(new Uri(o?.EndpointUrl ?? "") , credential),
+////    };
+////});
+
+//builder.Services.AddControllers();
+
+//builder.Services.AddAuthorization(options =>
 //{
-//    var o = builder.Configuration.GetSection("SignalR").Get<SignalROptions>();
-//    option.Endpoints = new ServiceEndpoint[]
-//    {
-//        new ServiceEndpoint(new Uri(o?.EndpointUrl ?? "") , credential),
-//    };
+//    options.AddPolicy("Admin", policy => policy.RequireClaim("Admin"));
 //});
 
-builder.Services.AddControllers();
+//var app = builder.Build();
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("Admin", policy => policy.RequireClaim("Admin"));
-});
+//// Configure the HTTP request pipeline.
+//// if (!app.Environment.IsDevelopment())
+//// {
+////     app.UseExceptionHandler("/Error");
+////     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+////     app.UseHsts();
+//// }
 
-var app = builder.Build();
+//// app.UseHttpsRedirection();
+//app.UseStaticFiles();
 
-// Configure the HTTP request pipeline.
-// if (!app.Environment.IsDevelopment())
-// {
-//     app.UseExceptionHandler("/Error");
-//     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-//     app.UseHsts();
-// }
+//app.UseRouting();
 
-// app.UseHttpsRedirection();
-app.UseStaticFiles();
+//// app.UseAuthorization();
 
-app.UseRouting();
+//app.MapRazorPages();
+////app.MapHub<ChatHub>("/Chat");
 
-// app.UseAuthorization();
-
-app.MapRazorPages();
-//app.MapHub<ChatHub>("/Chat");
-
-app.UseAuthorization();
+//app.UseAuthorization();
 
 
-app.Run();
+//app.Run();
