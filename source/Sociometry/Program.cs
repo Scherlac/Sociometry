@@ -1,4 +1,5 @@
 using Azure.Identity;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Azure.SignalR;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,12 +19,14 @@ namespace Sociometry
             //});
 
             //builder.Services.AddSingleton<ILoggerProvider, MyLoggerProvider>();
-            Extend(builder);
+            // Extend(builder);
+            // Extend();
         }
 
-        public void Extend(IFunctionsHostBuilder builder)
+        // public void Extend(IFunctionsHostBuilder builder)
+        public void Extend()
         {
-            //var builder = WebApplication.CreateBuilder(args);
+            var builder = WebApplication.CreateBuilder();
 
             // Add services to the container.
             builder.Services.AddRazorPages();
@@ -61,7 +64,7 @@ namespace Sociometry
             //    options.AddPolicy("Admin", policy => policy.RequireClaim("Admin"));
             //});
 
-            //var app = builder.Build();
+            var app = builder.Build();
 
             //// Configure the HTTP request pipeline.
             //// if (!app.Environment.IsDevelopment())
@@ -72,19 +75,18 @@ namespace Sociometry
             //// }
 
             //// app.UseHttpsRedirection();
-            //app.UseStaticFiles();
+            app.UseStaticFiles();
 
-            //app.UseRouting();
+            app.UseRouting();
 
             //// app.UseAuthorization();
 
-            //app.MapRazorPages();
+            app.MapRazorPages();
             ////app.MapHub<ChatHub>("/Chat");
 
             //app.UseAuthorization();
 
-
-            //app.Run();
+            app.RunAsync();
         }
     }
 }
